@@ -2,6 +2,14 @@
 Thumbs.db
 ehthumbs.db
 
+#Eclipse Nonsense
+*.classpath
+*.project
+*.settings
+
+#Java Nonsense
+*.class
+
 # Folder config file
 Desktop.ini
 
