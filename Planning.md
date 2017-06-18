@@ -1,0 +1,46 @@
+Two separate programs: server and client
+
+One player runs the server program.
+All clients connect to the IP address of the server (the person running can use localhost)
+
+For now, make an Interface for the client, and focus on the server.
+
+Server needs to keep track of:
+Table
+  4x Player
+    (client name, IP address, and seat N/S/E/W)
+  Board
+    id (deal number)
+    NorthHand, SouthHand, EastHand, WestHand
+      13x Card
+        (suit and rank: HeartAce, SpadeTen, ClubFour, etc.)
+      [automatically count HCP?]
+    Dealer
+    Vulnerability
+    Auction
+      Bid
+      Contract (4HSx)
+        (includes trump suit, declarer, dummy, trick threshold)
+    TrickStack
+      13x Trick
+        4x Card
+  ScoreSheet
+    Score (4HSx= --> 590 not vulnerable)
+      (IMP calculation? Don't worry about this yet)
+  ChatLog
+    ChatMessage
+    
+ 
+Client:
+  Receives Board from server with player names, vulnerability, dealer, Hand of 13 Cards
+  During auction:
+    Receives Auction from server after each Bid
+    Sends Bid to server when player's turn (Server must check to ensure is legal)
+    At end, receives Contract
+  During play:
+    Receives Trick from server after each Card played
+    Sends Card to server when player's turn (Server must check to ensure is legal)
+    Receives TrickStack from server after each Trick played
+      (NO WAY TO PREVENT CLIENT FROM LOOKING AT OLD TRICKS)
+  Receives ScoreSheet from Server after each Board completed
+  Sends ChatMessage to server when player chats
