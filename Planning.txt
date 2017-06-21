@@ -44,3 +44,10 @@ Client:
       (NO WAY TO PREVENT CLIENT FROM LOOKING AT OLD TRICKS)
   Receives ScoreSheet from Server after each Board completed
   Sends ChatMessage to server when player chats
+  
+  
+  
+  ------------------------------------------------------------------
+  Security thought:
+  Maybe we will have a "client-only" version of the code that gets the interfaces (that we will make) for the objects/methods we want
+  them to be able to interact with? Is it worth it?
