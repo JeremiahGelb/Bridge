@@ -1,17 +1,18 @@
 public class Card {
 	public final String suit; 
 	public final String rank;
-	public final int hcp;
+	public final int highCardPoints;
 	
-	public Card(String rank, String suit) {
+	public Card(String rank, String suit, Deck d) {
+		//Make sure cards can only be made by a deck
 		this.suit = suit.toUpperCase();
 		this.rank = rank.toUpperCase();
 		
-		if(this.rank.equals("A")) hcp = 4;
-		else if(this.rank.equals("K")) hcp = 3;
-		else if(this.rank.equals("Q")) hcp = 2; /* Hard coded hcp calculation. Not sure if slickness needed here? */
-		else if(this.rank.equals("J")) hcp = 1;
-		else hcp = 0;
+		if(this.rank.equals("A")) highCardPoints = 4;
+		else if(this.rank.equals("K")) highCardPoints = 3;
+		else if(this.rank.equals("Q")) highCardPoints = 2; /* Hard coded highCardPoints calculation. Not sure if slickness needed here? */
+		else if(this.rank.equals("J")) highCardPoints = 1;
+		else highCardPoints = 0;
 	}
 
 	public String toString(){
